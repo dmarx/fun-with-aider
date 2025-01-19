@@ -29,5 +29,6 @@ all_files = list(all_files)
 #print(f"all_files: {all_files}")
 #repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True) # self.io.tool_warning(f"Repo-map can't include {fname}")
 all_files = [f.absolute() for f in all_files]
+print(all_files)
 repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True)
 print(repo_content)
