@@ -3,6 +3,8 @@ name: Respond to issue
 on:
   issues:
     types: [opened, reopened]
+  push:
+    paths: ./.github/workflows/issue-simple.yml
   workflow_dispatch:
   
 jobs:
