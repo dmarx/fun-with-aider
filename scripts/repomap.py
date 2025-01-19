@@ -31,5 +31,6 @@ map = RepoMap()
 #all_files = [str(f.absolute()) for f in all_files]
 all_files = [str(f.absolute()) for f in all_files if f.is_file() and not f.name.startswith(".")]
 print(all_files)
-repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True)
+#repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True) # fails without a `main_model` to query max token count for
+repo_content = map.get_ranked_tags(chat_fnames=all_files)
 print(repo_content)
