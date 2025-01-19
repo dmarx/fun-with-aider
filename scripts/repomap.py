@@ -3,13 +3,15 @@
 See also: https://github.com/Aider-AI/aider/blob/main/aider/repomap.py
 """
 import aider
+from aider.io import InputOutput
 from aider.repomap import RepoMap
 from pathlib import Path
 
 all_files = Path(".").rglob("*") # NB: this object is a generator, not a materialized list
 #print(f"all_files: {all_files}")
 
-map = RepoMap()
+io = InputOutput()
+map = RepoMap(io=io)
 # repo_content = map.get_repo_map(chat_files=None, other_files=None)
 # print(repo_content) # None
 # repo_content = map.get_repo_map(chat_files=all_files, other_files=None)
