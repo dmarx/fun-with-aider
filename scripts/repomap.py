@@ -23,5 +23,5 @@ map = RepoMap()
 #print(repo_content)
 
 
-repo_content = map.get_ranked_tags_map(chat_files=None, force_refresh=True)
+repo_content = map.get_ranked_tags_map(chat_fnames=None, force_refresh=True)
 print(repo_content)
