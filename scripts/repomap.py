@@ -33,5 +33,5 @@ all_files = [str(f.absolute()) for f in all_files if f.is_file()]
 all_files = [f for f in all_files if not any([bad in f for bad in (".git",".aider")])]
 print(all_files)
 #repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True) # fails without a `main_model` to query max token count for
-repo_content = map.get_ranked_tags(chat_fnames=all_files, other_fnames=list(), mentioned_fnames=set(),mentioned_idents=set(),)
+repo_content = map.get_ranked_tags(chat_fnames=all_files, other_fnames=list(), mentioned_fnames=set(),mentioned_idents=set(),) # fails because of missing self.io attribute
 print(repo_content)
