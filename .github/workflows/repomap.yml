@@ -26,4 +26,4 @@ jobs:
           pip install aider-chat
         
       - name: Build Repo Map
-        run: python -m aider.repomap .*
+        run: python -m aider.repomap *
