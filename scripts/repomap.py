@@ -6,7 +6,7 @@ import aider
 from aider.repomap import RepoMap
 from pathlib import Path
 
-all_files = Path(".").glob("*") # NB: this object is a generator, not a materialized list
+all_files = Path(".").rglob("*") # NB: this object is a generator, not a materialized list
 #print(f"all_files: {all_files}")
 
 map = RepoMap()
