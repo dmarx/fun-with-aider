@@ -4,6 +4,7 @@ on:
   push:
     paths: 
       - ".github/workflows/repomap.yml"
+      - "scripts/repomap.py"
   workflow_dispatch:
 
 jobs:
