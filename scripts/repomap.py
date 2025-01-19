@@ -13,3 +13,4 @@ map = RepoMap()
 #repo_content = map.get_repo_map(chat_files=None, other_files=None)
 #print(repo_content) # None
 repo_content = map.get_repo_map(chat_files=all_files, other_files=None)
+print(repo_content) #
