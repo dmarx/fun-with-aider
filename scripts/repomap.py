@@ -14,10 +14,14 @@ map = RepoMap()
 # print(repo_content) # None
 # repo_content = map.get_repo_map(chat_files=all_files, other_files=None)
 # print(repo_content) # None
-repo_content = map.get_repo_map(chat_files=all_files, other_files=all_files)
-print(repo_content)
-all_files = list(all_files)
-repo_content = map.get_repo_map(chat_files=all_files, other_files=None)
-print(repo_content)
-repo_content = map.get_repo_map(chat_files=all_files, other_files=all_files)
+# repo_content = map.get_repo_map(chat_files=all_files, other_files=all_files) # ZeroDivisionError
+# print(repo_content)
+#all_files = list(all_files)
+#repo_content = map.get_repo_map(chat_files=all_files, other_files=None)
+#print(repo_content)
+#repo_content = map.get_repo_map(chat_files=all_files, other_files=all_files)
+#print(repo_content)
+
+
+repo_content = map.get_ranked_tags_map(chat_files=None, force_refresh=True)
 print(repo_content)
