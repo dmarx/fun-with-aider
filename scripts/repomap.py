@@ -6,11 +6,18 @@ import aider
 from aider.repomap import RepoMap
 from pathlib import Path
 
-all_files = Path(".").glob("*")
-print(f"all_files: {all_files}")
+all_files = Path(".").glob("*") # NB: this object is a generator, not a materialized list
+#print(f"all_files: {all_files}")
 
 map = RepoMap()
-#repo_content = map.get_repo_map(chat_files=None, other_files=None)
-#print(repo_content) # None
+# repo_content = map.get_repo_map(chat_files=None, other_files=None)
+# print(repo_content) # None
+# repo_content = map.get_repo_map(chat_files=all_files, other_files=None)
+# print(repo_content) # None
+repo_content = map.get_repo_map(chat_files=all_files, other_files=all_files)
+print(repo_content)
+all_files = list(all_files)
 repo_content = map.get_repo_map(chat_files=all_files, other_files=None)
-print(repo_content) #
+print(repo_content)
+repo_content = map.get_repo_map(chat_files=all_files, other_files=all_files)
+print(repo_content)
