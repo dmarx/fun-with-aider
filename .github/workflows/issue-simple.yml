@@ -23,5 +23,5 @@ jobs:
           python-version: '3.12'
           # cache: 'pip'
 
-      # - name: Show Repo Map
-      #   run:
+      - name: Show Repo Map
+        run: python -m aider.repomap
