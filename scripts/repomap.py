@@ -25,10 +25,11 @@ map = RepoMap()
 
 #repo_content = map.get_ranked_tags_map(chat_fnames=None, force_refresh=True) # NoneType not iterable
 #repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True) # NoneType not iterable
-all_files = list(all_files)
+# all_files = list(all_files)
 #print(f"all_files: {all_files}")
 #repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True) # self.io.tool_warning(f"Repo-map can't include {fname}")
-all_files = [str(f.absolute()) for f in all_files]
+#all_files = [str(f.absolute()) for f in all_files]
+all_files = [str(f.absolute()) for f in all_files if f.is_file() and not f.name.startswith(".")]
 print(all_files)
 repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True)
 print(repo_content)
