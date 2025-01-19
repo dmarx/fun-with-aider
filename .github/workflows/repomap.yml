@@ -5,8 +5,6 @@ on:
     paths: 
       - "./.github/workflows/issue-simple.yml"
   workflow_dispatch:
-#   issues:
-#     types: [opened, reopened]
 
 jobs:
   respond-to-issue:
@@ -25,7 +23,7 @@ jobs:
       - name: Install dependencies...
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install aider-chat
         
       - name: Build Repo Map
         run: python -m aider.repomap .
