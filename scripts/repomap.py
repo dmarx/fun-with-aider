@@ -23,5 +23,6 @@ map = RepoMap()
 #print(repo_content)
 
 
-repo_content = map.get_ranked_tags_map(chat_fnames=None, force_refresh=True)
+#repo_content = map.get_ranked_tags_map(chat_fnames=None, force_refresh=True) # NoneType not iterable
+repo_content = map.get_ranked_tags_map(chat_fnames=all_files, force_refresh=True) # NoneType not iterable
 print(repo_content)
