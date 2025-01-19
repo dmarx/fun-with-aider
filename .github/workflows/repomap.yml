@@ -3,7 +3,7 @@ name: Generate Aider RepoMap
 on:
   push:
     paths: 
-      - "./.github/workflows/issue-simple.yml"
+      - ".github/workflows/repomap.yml"
   workflow_dispatch:
 
 jobs:
