@@ -1,12 +1,13 @@
-# .github/workflows/issue-simple.yml
-name: Respond to issue
+# .github/workflows/repomap.yml
+name: Generate Aider RepoMap
 on:
-  issues:
-    types: [opened, reopened]
   push:
-    paths: ./.github/workflows/issue-simple.yml
+    paths: 
+      - "./.github/workflows/issue-simple.yml"
   workflow_dispatch:
-  
+#   issues:
+#     types: [opened, reopened]
+
 jobs:
   respond-to-issue:
     runs-on: ubuntu-latest
@@ -16,19 +17,15 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true
-      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
           cache: 'pip'
-
       - name: Install dependencies...
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
         
-      - name: Show Repo Map
-        run: python -m aider.repomap
+      - name: Build Repo Map
+        run: python -m aider.repomap .
